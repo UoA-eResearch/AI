@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore curated AI tools including language models, computer vision, and machine learning platforms.">
+    <title>AI Tools | AI Knowledge Base</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>AI Knowledge Base</h1>
+                    <p class="subtitle">Dr. Nidhi Gowdra | University of Auckland</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools.html" class="active">AI Tools</a></li>
+                    <li><a href="use-cases.html">Use Cases</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>AI Tools Catalog</h2>
+                <p class="lead">A curated collection of artificial intelligence tools and platforms across various domains.</p>
+            </div>
+        </section>
+
+        <section class="tools-content">
+            <div class="container">
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-category="all">All Tools</button>
+                    <button class="filter-btn" data-category="nlp">Language Models</button>
+                    <button class="filter-btn" data-category="vision">Computer Vision</button>
+                    <button class="filter-btn" data-category="ml">ML Platforms</button>
+                    <button class="filter-btn" data-category="research">Research</button>
+                </div>
+
+                <div class="tools-grid" id="toolsGrid">
+                    <!-- Language Models -->
+                    <div class="tool-card" data-category="nlp">
+                        <h3>ChatGPT</h3>
+                        <span class="tool-badge">Language Model</span>
+                        <p>Advanced conversational AI model developed by OpenAI. Capable of understanding and generating human-like text for various tasks.</p>
+                        <ul class="tool-features">
+                            <li>Natural language understanding</li>
+                            <li>Code generation and debugging</li>
+                            <li>Content creation and editing</li>
+                            <li>Question answering</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Commercial</span>
+                            <a href="https://chat.openai.com" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="nlp">
+                        <h3>Google Gemini</h3>
+                        <span class="tool-badge">Language Model</span>
+                        <p>Google's multimodal AI model capable of processing text, images, audio, and video to provide comprehensive responses.</p>
+                        <ul class="tool-features">
+                            <li>Multimodal understanding</li>
+                            <li>Advanced reasoning</li>
+                            <li>Code generation</li>
+                            <li>Creative writing</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Commercial</span>
+                            <a href="https://gemini.google.com" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="nlp">
+                        <h3>Claude</h3>
+                        <span class="tool-badge">Language Model</span>
+                        <p>Anthropic's AI assistant focused on being helpful, harmless, and honest. Excellent for analysis and long-form content.</p>
+                        <ul class="tool-features">
+                            <li>Long context understanding</li>
+                            <li>Technical writing</li>
+                            <li>Data analysis</li>
+                            <li>Research assistance</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Commercial</span>
+                            <a href="https://claude.ai" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Computer Vision -->
+                    <div class="tool-card" data-category="vision">
+                        <h3>DALL-E</h3>
+                        <span class="tool-badge">Computer Vision</span>
+                        <p>AI system that creates images from textual descriptions, enabling creative visualization and design generation.</p>
+                        <ul class="tool-features">
+                            <li>Text-to-image generation</li>
+                            <li>Image editing and variations</li>
+                            <li>Style transfer</li>
+                            <li>Creative design</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Commercial</span>
+                            <a href="https://openai.com/dall-e" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="vision">
+                        <h3>Midjourney</h3>
+                        <span class="tool-badge">Computer Vision</span>
+                        <p>AI-powered image generation tool known for producing high-quality, artistic images from text prompts.</p>
+                        <ul class="tool-features">
+                            <li>Artistic image generation</li>
+                            <li>Style customization</li>
+                            <li>High resolution output</li>
+                            <li>Community gallery</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Commercial</span>
+                            <a href="https://www.midjourney.com" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- ML Platforms -->
+                    <div class="tool-card" data-category="ml">
+                        <h3>TensorFlow</h3>
+                        <span class="tool-badge">ML Platform</span>
+                        <p>Open-source machine learning framework developed by Google for building and deploying ML models.</p>
+                        <ul class="tool-features">
+                            <li>Deep learning capabilities</li>
+                            <li>Production deployment</li>
+                            <li>Mobile and edge support</li>
+                            <li>Extensive ecosystem</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Open Source</span>
+                            <a href="https://www.tensorflow.org" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="ml">
+                        <h3>PyTorch</h3>
+                        <span class="tool-badge">ML Platform</span>
+                        <p>Open-source machine learning library known for its flexibility and ease of use in research and production.</p>
+                        <ul class="tool-features">
+                            <li>Dynamic computation graphs</li>
+                            <li>Research-friendly API</li>
+                            <li>Strong GPU acceleration</li>
+                            <li>Active community</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Open Source</span>
+                            <a href="https://pytorch.org" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="ml">
+                        <h3>Hugging Face</h3>
+                        <span class="tool-badge">ML Platform</span>
+                        <p>Platform for sharing and deploying machine learning models, with focus on NLP and transformers.</p>
+                        <ul class="tool-features">
+                            <li>Pre-trained model hub</li>
+                            <li>Transformers library</li>
+                            <li>Model deployment</li>
+                            <li>Community datasets</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Open Source</span>
+                            <a href="https://huggingface.co" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Research Tools -->
+                    <div class="tool-card" data-category="research">
+                        <h3>Jupyter Notebooks</h3>
+                        <span class="tool-badge">Research</span>
+                        <p>Interactive computing environment for creating and sharing documents with live code, equations, and visualizations.</p>
+                        <ul class="tool-features">
+                            <li>Interactive coding</li>
+                            <li>Data visualization</li>
+                            <li>Reproducible research</li>
+                            <li>Multi-language support</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Open Source</span>
+                            <a href="https://jupyter.org" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="tool-card" data-category="research">
+                        <h3>Google Colab</h3>
+                        <span class="tool-badge">Research</span>
+                        <p>Free cloud-based Jupyter notebook environment with GPU/TPU support for machine learning experiments.</p>
+                        <ul class="tool-features">
+                            <li>Free GPU access</li>
+                            <li>Cloud-based execution</li>
+                            <li>Easy sharing</li>
+                            <li>Pre-installed libraries</li>
+                        </ul>
+                        <div class="tool-meta">
+                            <span class="tool-type">Free</span>
+                            <a href="https://colab.research.google.com" target="_blank" rel="noopener">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 University of Auckland, Center for eResearch. Licensed under MIT License.</p>
+            <p>Maintained by Dr. Nidhi Gowdra</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
