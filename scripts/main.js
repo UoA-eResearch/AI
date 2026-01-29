@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeMobileMenu();
     initializeSmoothScroll();
     
+    // Add rel attribute to external links for security
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+        if (!link.hasAttribute('rel')) {
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+    
     console.log('AI Knowledge Base loaded successfully');
 });
 
@@ -93,34 +101,7 @@ function initializeSmoothScroll() {
     });
 }
 
-/**
- * Add fade-in animation on scroll
- */
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements that should animate in
-    const animatedElements = document.querySelectorAll('.feature-card, .tool-card, .use-case, .resource-item');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s, transform 0.5s';
-        observer.observe(el);
-    });
-}
+
 
 // Add CSS for fade-in animation
 const style = document.createElement('style');
@@ -145,24 +126,4 @@ window.addEventListener('resize', function() {
     resizeTimer = setTimeout(function() {
         initializeMobileMenu();
     }, 250);
-});
-
-// Utility function to check if element is in viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-// Add external link indicators
-document.addEventListener('DOMContentLoaded', function() {
-    const externalLinks = document.querySelectorAll('a[target="_blank"]');
-    
-    externalLinks.forEach(link => {
-        link.setAttribute('rel', 'noopener noreferrer');
-    });
 });
