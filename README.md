@@ -1,27 +1,32 @@
-# AI Knowledge Base
+# AI Hub (GitHub Pages-ready static site)
 
-Dr. Nidhi Gowdra's publicly facing knowledge base for AI tools and use-cases.
+A static website for curating AI tools and AI use-cases. Includes governance fields:
+- Data classification: Public, Internal, Sensitive, Restricted
+- Hosting
+- PII risk
+- Approval status
 
-## Overview
+## Deploy to GitHub Pages
+1. Create a GitHub repo (e.g., `ai-hub`).
+2. Commit the contents of this folder to the repo root (so `index.html` is at root).
+3. GitHub: **Settings → Pages** → Source: **Deploy from a branch** → Branch: `main` → Folder: `/(root)`.
 
-A publicly facing website to disseminate curated information about AI tools and use-cases. This website serves as a comprehensive resource for researchers, educators, and practitioners interested in artificial intelligence applications.
+## Edit content
+- `assets/data.tools.json`
+- `assets/data.usecases.json`
 
-## Features
+## Regenerate detail pages
+After changing JSON, run:
+```bash
+python build.py
+```
 
-- **AI Tools Catalog**: Comprehensive listing of AI tools across various domains including language models, computer vision, and machine learning platforms
-- **Use Cases**: Real-world applications and case studies demonstrating AI implementation
-- **Resources**: Curated learning materials, tutorials, and documentation
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+## Local preview
+```bash
+python -m http.server 8000
+```
+Open: http://localhost:8000
 
-## Getting Started
-https://uoa-eresearch.github.io/AI/
-
-## Contributing
-
-This knowledge base is maintained by Dr. Nidhi Gowdra at the University of Auckland's Center for eResearch. For questions or suggestions, please contact the Center for eResearch.
-
-## License
-
-Licensed under the MIT License. See LICENSE file for details.
-
-Copyright (c) 2026 University of Auckland, Center for eResearch
+## Notes
+- `.nojekyll` is included.
+- All paths are relative so this works under `/<repo>/`.

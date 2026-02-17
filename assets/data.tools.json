@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Zotero",
+    "category": "Literature & Discovery",
+    "audience": [
+      "Researchers",
+      "Students"
+    ],
+    "license": "Free",
+    "tags": [
+      "citation",
+      "literature review",
+      "pdf",
+      "notes"
+    ],
+    "summary": "Reference management for collecting, organising, and citing sources. Pair with institutional AI guidance for safe workflows.",
+    "website": "https://www.zotero.org/",
+    "vendor": "Zotero",
+    "data_classification": "Internal",
+    "hosting": "Local app + cloud sync optional",
+    "pii_risk": "Medium",
+    "approval_status": "Assess",
+    "governance_notes": "Avoid syncing Sensitive/Restricted documents or notes to third-party services without approval.",
+    "slug": "zotero"
+  },
+  {
+    "name": "Whisper (local transcription)",
+    "category": "Transcription",
+    "audience": [
+      "Researchers",
+      "Practitioners"
+    ],
+    "license": "Open Source",
+    "tags": [
+      "speech-to-text",
+      "audio",
+      "interviews"
+    ],
+    "summary": "Speech-to-text model that can be run locally to improve privacy control for sensitive audio.",
+    "website": "https://github.com/openai/whisper",
+    "vendor": "Open source community",
+    "data_classification": "Sensitive",
+    "hosting": "Local (self-hosted)",
+    "pii_risk": "High",
+    "approval_status": "Conditional",
+    "governance_notes": "Prefer local processing for Sensitive/Restricted audio; store transcripts per retention policy; de-identify where possible.",
+    "slug": "whisper-local-transcription"
+  },
+  {
+    "name": "JupyterLab",
+    "category": "Coding & Analysis",
+    "audience": [
+      "Researchers",
+      "Practitioners",
+      "Students"
+    ],
+    "license": "Open Source",
+    "tags": [
+      "python",
+      "notebooks",
+      "reproducibility"
+    ],
+    "summary": "Interactive notebooks for reproducible workflows; integrate AI assistants via approved extensions if available.",
+    "website": "https://jupyter.org/",
+    "vendor": "Project Jupyter",
+    "data_classification": "Restricted",
+    "hosting": "Hybrid (institutional or cloud) — depends on deployment",
+    "pii_risk": "Medium",
+    "approval_status": "Approved",
+    "governance_notes": "Treat notebooks as records; avoid secrets in plaintext; ensure hosting aligns with data classification and residency requirements.",
+    "slug": "jupyterlab"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Rapid literature triage for a scoping review",
+    "domain": "Health & Biomedical",
+    "stage": "Discovery",
+    "tags": [
+      "screening",
+      "search strategy",
+      "summarisation"
+    ],
+    "summary": "Speed up abstract screening and clustering while maintaining transparency and reviewer oversight.",
+    "workflow": [
+      "Export candidate abstracts from bibliographic databases.",
+      "Cluster topics and draft inclusion/exclusion rationales.",
+      "Human reviewers verify decisions and record reasons.",
+      "Document prompts, settings, and sampling for reproducibility."
+    ],
+    "recommendedTools": [
+      "Zotero"
+    ],
+    "governance_notes": "Prefer Public/Internal abstracts; do not upload paywalled full-text outside licensed systems.",
+    "slug": "rapid-literature-triage-for-a-scoping-review"
+  },
+  {
+    "title": "Qualitative interview coding assistant (human‑in‑the‑loop)",
+    "domain": "Social Sciences",
+    "stage": "Analysis",
+    "tags": [
+      "qualitative",
+      "coding",
+      "themes"
+    ],
+    "summary": "Generate candidate codes and theme suggestions; researchers validate and refine codebooks.",
+    "workflow": [
+      "De-identify transcripts.",
+      "Generate candidate codes using an approved model or local pipeline.",
+      "Researchers refine the codebook and re-code segments.",
+      "Audit a sample for consistency and bias."
+    ],
+    "recommendedTools": [
+      "Whisper (local transcription)",
+      "JupyterLab"
+    ],
+    "governance_notes": "Transcripts often contain PII; treat as Sensitive/Restricted; keep audit trails and ensure approved storage.",
+    "slug": "qualitative-interview-coding-assistant-humanintheloop"
+  }
+]
