@@ -229,7 +229,7 @@ async function initUsecases(){
 function initWorkshops(){
   const workshops = [
     {
-      name: "Prompt Engineering",
+      name: "Effective Prompt Engineering",
       summary: "Learn techniques for crafting effective prompts to improve AI model outputs and achieve consistent results across applications.",
       level: "Beginner",
       type: "Self-paced",
