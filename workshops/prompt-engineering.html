@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prompt Engineering — Workshop — AI Hub</title>
+  <meta name="description" content="Learn techniques for crafting effective prompts to improve AI model outputs." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script defer src="../assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">&diams;</span>
+        <a class="brand-link" href="../index.html">AI Hub</a>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="../tools.html">Tools</a>
+        <a href="../use-cases.html">Use‑cases</a>
+        <a href="../workshops.html">Workshops</a>
+        <a href="../about.html">About</a>
+        <button class="btn ghost" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+      </nav>
+    </div>
+  </header>
+  
+<main id='main' class='container section prose'>
+  <a class='muted' href='../workshops.html'>← Back to workshops</a>
+  <h1>Prompt Engineering</h1>
+  <p class='muted'>Learn techniques for crafting effective prompts to improve AI model outputs and achieve consistent results across applications.</p>
+  <div class='badges' style='margin:.6rem 0 1rem'>
+    <span class='badge'>Beginner</span>
+    <span class='badge'>best practices</span><span class='badge'>prompting</span>
+  </div>
+  <h2>Learning Objectives</h2>
+  <ul><li>Understand prompt structure and how AI models interpret requests</li><li>Learn techniques for improving prompt clarity and specificity</li><li>Practice advanced prompting strategies like few-shot learning and chain-of-thought</li><li>Apply prompts across different AI use-cases and models</li></ul>
+  <h2>Duration</h2>
+  <p class='muted'>1 hour (self-paced)</p>
+  <h2>Prerequisites</h2>
+  <p class='muted'>Basic familiarity with AI tools and language models</p>
+</main>
+
+<div class='container section prose'>
+<h2>What is a prompt?</h2>
+<p> You might have heard good prompts described as an "art," but there are concrete techniques you can use to improve your prompting skills and get more consistent results.
+    A prompt is a natural language conversation with a generative AI model, consisting of a set of instructions or questions to generate a specific output. 
+    An effective prompt is clear, specific, and provides sufficient context for the AI to understand what is expected.
+</p>
+<p>
+    <ul> 
+      <li> A prompt can be as simple as a phrase or as complex as multiple sentences and paragraphs (MIT, 2026). 
+      <li> Some models are "Multi-Modal" which just means they can handle different "modes" of input, like text, images, video or audio. 
+        In this instance, you might have a prompt that includes both text and an image, which is sometimes called a "multi-modal prompt" (OpenAI, 2024). <br>
+        For example, you could provide a prompt that includes a picture of a cat and ask the model to describe the cat or generate a story about it.
+    </ul>
+</p>
+<p>
+  <em> Key Takeaways: <p><em>Before we dive into prompt engineering techniques, let's first identify when to use prompt engineering techniques.</p></em>
+    <ul> 
+    <li>While newer models may have improved capabilities and interfaces, the core principles of effective prompting remain the same.</li>
+    <li>It's useful to think of prompting as providing a set of instructions or in other words, programming with words (Mollick, 2023) to guide the AI's behavior to obtain the desired output. </li>
+  </ul>
+  </em>
+</p>
+</div>
+<div class='container section prose'>
+<h2> When to apply prompt engineering techniques? </h2>
+<p> Prompt engineering is most useful when you're not getting the desired output from an AI model or if you're trying to improve the quality of the output. It's particularly helpful in the following scenarios:
+  <ul>  
+    <li> Improving Accuracy & Reducing Hallucinations: When the AI is providing inaccurate, irrelevant, or generic answers, and you need to enforce constraints, provide context, or offer examples (few-shot prompting) to guide the output.
+    <li> Complex Tasks & Reasoning: When the model needs to solve complex problems, such as math, logic, or troubleshooting, which requires chain-of-thought prompting to break down reasoning.
+    <li> Controlling Tone, Style, and Format: When you need the AI to adopt a specific persona (e.g., "act as a lawyer") or generate output in a structured format (e.g., JSON, Markdown).
+    <li> Rapid Prototyping & Development: When building applications on top of LLMs, prompt engineering allows for quick, cost-effective, and iterative refinement of model behavior without the high cost and time of fine-tuning.
+    <li> Enhancing Safety & Reducing Bias: To guide the AI to avoid sensitive topics, follow ethical guidelines, or provide safe, moderated answers. 
+  </ul>
+<em>Key Takeaway: <p><em> Use prompt engineering when you want to transform a generic AI model into a specialized, high-performing tool for a specific task.</em></p></em>
+</p>
+</div>
+<div class='container section prose'>
+<h2>Prompt engineering techniques</h2>
+<ul>
+  <li><strong>Zero-shot prompting:</strong> Clarity and specificity are key, make sure to use clear concise language with specific details and instructions to guide the AI's response. Avoid ambiguity and be assertive.</li>
+  <li><strong>Few-shot prompting:</strong> Provide a few examples of the desired output format to help the AI understand the task better.</li>
+  <li><strong>Chain-of-thought prompting:</strong> Break down complex tasks into smaller steps and prompt the AI to reason through each step sequentially.</li>
+  <li><strong>Role prompting:</strong> Ask the AI to assume a specific role (e.g., "Act as a data analyst") to generate more relevant responses.</li>
+  <li><strong>Use-case prompting:</strong> Tailor prompts to specific applications, such as content generation, coding assistance, or data analysis, to improve relevance and performance.</li>
+  <li><strong>Iterative prompting:</strong> Refine prompts based on the AI's responses to achieve better results through trial and error.</li>
+  <li><strong>Multi-modal prompting:</strong> For models that support multiple input types, combine text with images, audio, or video to provide richer context and guide the AI's output.</li>
+  <li><strong>User-defined system prompting/Meta-prompting:</strong> Use user-defined system instructions to set the behavior of the model for the entire conversation, such as "You are a helpful assistant" to guide the model's responses.</li>
+  <li><strong>Contextual prompting:</strong> Provide relevant background information or context within the prompt to help the AI generate more informed and accurate responses.</li>
+  <li><strong>Negative prompting:</strong> Explicitly instruct the AI on what to avoid in its response, such as "Do not include any personal opinions" to reduce bias or unwanted content.</li>
+  <li><strong>Safety/Bias prompting:</strong> Explicitly instruct the AI on safety and bias considerations, such as "Avoid generating any content that is offensive or biased" to promote ethical AI use.</li>
+</ul>
+<h2></h2>
+<em> Key Takeaways: <p><em>Experiment with different prompting techniques across various use-cases and adjust your prompts based on the model's responses to achieve better results.</em></p>
+  <ul>
+    <li><strong>Prompt chaining:</strong> Link multiple prompts together to create a more complex workflow, where the output of one prompt serves as the input for the next, allowing for multi-step reasoning and task completion.</li> 
+    <li><strong>Prompt templates:</strong> Create reusable prompt templates for common tasks to ensure consistency and efficiency in prompting across different use-cases.</li>
+  </ul>
+</em>
+</div>
+
+<div class='container section prose'>
+<h2>Examples of good prompts</h2>
+<ul>
+<p>
+<strong>Zero-shot prompts: </strong>
+<p>"Summarize the key findings of the research paper in one paragraph."</p>
+</p>
+<p>
+<strong>Few-shot prompts: </strong>
+<p>"Here are three examples of well-written summaries: [Example 1], [Example 2], [Example 3]. Now summarize the key findings of the research paper in one paragraph."</p>
+</p>
+
+<p>
+<strong>Chain-of-Thought prompts: </strong>
+<p>"First, identify the main topic of the research paper. Then, list the key findings. Finally, summarize these findings in one paragraph."</p>
+</p>
+
+<p>
+<strong>Role prompts: </strong>
+<p>"You are an expert researcher in the field of computer science undertaking a systematic literature review. Summarize the key findings of the research paper in one paragraph."</p>
+</p>
+
+<p>
+<strong>Use-case prompts: </strong>
+<p>"You are a helpful assistant that summarizes research papers. Summarize the key findings of the research paper in one paragraph."</p>
+</p>
+
+<p>
+<strong>Iterative prompts: </strong>
+<p>"You are a coding assistant. Help me write a Python function that calculates the sum of two numbers." <br> "Modify the function so that it only handles integers and floats not strings." </p>
+</p>
+
+<p>
+<strong>Multi-modal prompts: </strong>
+<p>"You are a helpful assistant that can process both text and tabular data. Analyze the csv file and summarize the key findings in one paragraph."</p>
+</p>
+
+<p>
+<strong>User-defined system prompts: </strong>
+<p>"Always use a consistent and professional tone in your responses."</p>
+</p>
+
+<p>
+<strong>Contextual prompts: </strong>
+<p>"Take this technical, jargon-heavy paragraph in the domain of artificial intelligence and rewrite it as a simple, engaging abstract for a manuscript submission."</p>
+</p>
+
+<p>
+<strong>Negative prompts: </strong>
+<p>"DO NOT generate any content that is not relevant to the topic at hand."</p>
+</p>
+
+<p>
+<strong>Safety/Bias prompts: </strong>
+<p>"YOU MUST NOT generate any content that is offensive, biased, or harmful."</p>
+</p>
+</ul>
+</div>
+
+<div class='container section prose'>
+<h2>Some useful tips and tricks</h2>
+<ul>
+<li><strong>Adjust Temperature and max tokens: (if applicable)</strong> Adjust the model's temperature setting to control the creativity of the output (lower for more deterministic responses, higher for more creative ones) and set max tokens to limit response length.</li>
+<li><strong>Being polite:</strong> There are two trains of thought on being polite by using phrases such as "please" and "thank you" while conversing with an AI model, <br>
+    Some argue that it can lead to more cooperative and helpful responses, while others believe it has no impact on the model's behavior. <br>
+    Ultimately, it is a personal choice and may depend on the specific use-case and the desired tone of the interaction.
+    Experiment with both approaches to see which yields better results for your particular application.
+</li>
+</ul>
+
+<div class='container section prose'>
+<h2>Limitations of AI and Prompt engineering techniques</h2>
+<p> While prompt engineering can significantly improve AI performance, it is not a panacea. AI models still have inherent limitations such as hallucinations, bias, and lack of real-world knowledge. Prompt engineering techniques are most effective when used in conjunction with other best practices like careful data curation and model validation. </p>
+<p><em> Key Takeaway: <p><em> Be aware of the limitations of both AI models and prompt engineering techniques to set realistic expectations and avoid over-reliance on either. </em></p>
+<ul> 
+  <li>Prompt engineering can help mitigate some issues like hallucinations and bias, but it cannot eliminate them entirely. Always validate AI outputs and use human judgment when necessary.</li>
+  <li>Prompt engineering is a powerful tool for improving AI performance, but it should be used as part of a broader strategy that includes data quality, model selection, and ongoing monitoring.</li>
+</ul>
+</p>
+</em>
+</div>
+
+
+<div class='container section prose'> 
+  <h3>References</h3>
+  <ul>
+    <li>Mollick, E. (2023). <a href='https://ericmollick.com/teaching-with-chatgpt'>Teaching with ChatGPT</a>. Eric Mollick.</li>
+    <li>OpenAI. (2024). <a href='https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt'>Best practices for prompt engineering</a>. OpenAI.</li>
+    <li>OpenAI. (2026). <a href='https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api'>System instructions</a>. OpenAI.</li>
+    <li>MIT (2026)<a href= https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/ Effective prompts</a> MIT. </li>
+    <li>Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., ... & Amodei, D. (2020). Language models are few-shot learners. <em>arXiv preprint arXiv:2005.14165</em>.</li>
+    <li>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., ... & Le, Q. V. (2022). Chain of thought prompting elicits reasoning in large language models. <em>arXiv preprint arXiv:2201.11903</em>.</li>
+
+</div>
+
+<footer class='site-footer'>
+  <div class='container footer-inner'>
+    <p>© <span id='year'></span> AI Hub</p>
+    <p class='muted'><a href='../about.html#disclaimer'>Disclaimer</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

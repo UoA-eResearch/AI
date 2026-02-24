@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Workshops — AI Hub</title>
+  <meta name="description" content="AI Hub workshops and training resources." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">&diams;</span>
+      <a class="brand-link" href="index.html">AI Hub</a>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="" href="tools.html">Tools</a>
+      <a class="" href="use-cases.html">Use‑cases</a>
+      <a class="active" href="workshops.html">Workshops</a>
+      <a class="" href="about.html">About</a>
+      <button class="btn ghost" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container section" data-page="workshops">
+  <h1>Workshops</h1>
+  <p class="muted">Self-paced and instructor-led training resources to build skills in AI adoption, governance, and practical workflows.</p>
+
+  <div class="filters">
+    <label class="field"><span>Search</span><input id="qWorkshops" type="search" placeholder="e.g., prompt engineering, AI governance…" /></label>
+
+    <label class="field"><span>Level</span><select id="levelWorkshops"><option value="">All</option><option>Beginner</option><option>Advanced</option></select></label>
+
+    <label class="field"><span>Type</span><select id="typeWorkshops"><option value="">All</option><option>Self-paced</option><option>Instructor-led</option></select></label>
+  </div>
+
+  <div class="toolbar">
+    <div class="muted"><span id="workshopsCount">0</span> results</div>
+    <a class="btn" href="about.html#contribute">Suggest a workshop</a>
+  </div>
+
+  <div class="grid" id="workshopsGrid" aria-live="polite"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> AI Hub</p>
+    <p class="muted"><a href="about.html#contact">Contact</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

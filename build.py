@@ -54,8 +54,7 @@ def detail_doc(title: str, description: str, body: str) -> str:
       </div>
       <nav class=\"nav\" aria-label=\"Primary\">
         <a href=\"../tools.html\">Tools</a>
-        <a href=\"../use-cases.html\">Use-cases</a>
-        <a href=\"../about.html\">About</a>
+        <a href=\"../use-cases.html\">Use-cases</a>        <a href="../workshops.html">Workshops</a>        <a href=\"../about.html\">About</a>
         <button class=\"btn ghost\" id=\"themeToggle\" type=\"button\" aria-label=\"Toggle theme\">Theme</button>
       </nav>
     </div>

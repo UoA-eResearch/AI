@@ -225,6 +225,52 @@ async function initUsecases(){
   render();
 }
 
+/* ---------- Workshops page ---------- */
+function initWorkshops(){
+  const workshops = [
+    {
+      name: "Prompt Engineering",
+      summary: "Learn techniques for crafting effective prompts to improve AI model outputs and achieve consistent results across applications.",
+      level: "Beginner",
+      type: "Self-paced",
+      tags: ["prompting", "best practices"],
+      slug: "prompt-engineering"
+    }
+  ];
+
+  const grid = $("#workshopsGrid");
+  const q = $("#qWorkshops"), level = $("#levelWorkshops"), type = $("#typeWorkshops");
+  const count = $("#workshopsCount");
+
+  function render(){
+    const qv = q.value.trim();
+    const lv = level.value;
+    const tv = type.value;
+
+    const filtered = workshops.filter(w =>
+      matchesQuery(w, qv) &&
+      (!lv || w.level === lv) &&
+      (!tv || w.type === tv)
+    );
+
+    grid.innerHTML = "";
+    filtered.forEach(w => {
+      grid.appendChild(createCard({
+        name: w.name,
+        summary: w.summary,
+        tags: [...(w.tags || []), w.level].filter(Boolean),
+        meta: `${w.level} · Workshop`,
+        detailsHref: `workshops/${w.slug}.html`
+      }));
+    });
+
+    count.textContent = String(filtered.length);
+  }
+
+  [q, level, type].forEach(el => el && el.addEventListener("input", render));
+  render();
+}
+
 /* ---------- Home page ---------- */
 async function initHome(){
   const [tools, usecases] = await Promise.all([
@@ -280,5 +326,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const page = document.querySelector("main")?.getAttribute("data-page");
   if(page === "tools") initTools();
   else if(page === "usecases") initUsecases();
+  else if(page === "workshops") initWorkshops();
   else initHome();
 });
