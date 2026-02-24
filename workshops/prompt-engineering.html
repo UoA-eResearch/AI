@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Effective Prompt Engineering — Workshop — AI Hub</title>
+  <title>Basics of Prompt Engineering — Workshop — AI Hub</title>
   <meta name="description" content="Learn techniques for crafting effective prompts to improve AI model outputs." />
   <link rel="stylesheet" href="../assets/styles.css" />
   <script defer src="../assets/app.js"></script>
@@ -28,7 +28,7 @@
   
 <main id='main' class='container section prose'>
   <a class='muted' href='../workshops.html'>← Back to workshops</a>
-  <h1>Effective Prompt Engineering</h1>
+  <h1>Basics of Prompt Engineering</h1>
   <p class='muted'>Learn techniques for crafting effective prompts to improve AI model outputs and achieve consistent results across applications.</p>
   <div class='badges' style='margin:.6rem 0 1rem'>
     <span class='badge'>Beginner</span>
@@ -83,13 +83,14 @@
 <ul>
   <li><strong>Zero-shot prompting:</strong> Clarity and specificity are key, make sure to use clear concise language with specific details and instructions to guide the AI's response. Avoid ambiguity and be assertive.</li>
   <li><strong>Few-shot prompting:</strong> Provide a few examples of the desired output format to help the AI understand the task better.</li>
-  <li><strong>Chain-of-thought prompting:</strong> Break down complex tasks into smaller steps and prompt the AI to reason through each step sequentially.</li>
+  <li><strong>Reasoning/Chain-of-thought prompting:</strong> Guide the AI to think through a problem step-by-step, especially for tasks that require logical reasoning or complex problem-solving. It helps break down complex tasks into smaller steps enabling the AI to reason through each step sequentially.</li>
   <li><strong>Role prompting:</strong> Ask the AI to assume a specific role (e.g., "Act as a data analyst") to generate more relevant responses.</li>
   <li><strong>Use-case prompting:</strong> Tailor prompts to specific applications, such as content generation, coding assistance, or data analysis, to improve relevance and performance.</li>
   <li><strong>Iterative prompting:</strong> Refine prompts based on the AI's responses to achieve better results through trial and error.</li>
   <li><strong>Multi-modal prompting:</strong> For models that support multiple input types, combine text with images, audio, or video to provide richer context and guide the AI's output.</li>
   <li><strong>User-defined system prompting/Meta-prompting:</strong> Use user-defined system instructions to set the behavior of the model for the entire conversation, such as "You are a helpful assistant" to guide the model's responses.</li>
   <li><strong>Contextual prompting:</strong> Provide relevant background information or context within the prompt to help the AI generate more informed and accurate responses.</li>
+  <li><strong>Reasoning prompting:</strong> </li>
   <li><strong>Negative prompting:</strong> Explicitly instruct the AI on what to avoid in its response, such as "Do not include any personal opinions" to reduce bias or unwanted content.</li>
   <li><strong>Safety/Bias prompting:</strong> Explicitly instruct the AI on safety and bias considerations, such as "Avoid generating any content that is offensive or biased" to promote ethical AI use.</li>
 </ul>
@@ -115,8 +116,10 @@
 </p>
 
 <p>
-<strong>Chain-of-Thought prompts: </strong>
-<p>"First, identify the main topic of the research paper. Then, list the key findings. Finally, summarize these findings in one paragraph."</p>
+<strong>Reasoning/Chain-of-Thought (CoT) prompts: </strong>
+<p>"First, identify the main topic of the research paper. Then, list the key findings. Finally, summarize these findings in one paragraph." </p>
+<br>[or]<br>
+<p> "Considering [code/context], develop a step-by-step plan to resolve the error [error/stack trace]. Explain your reasoning for each step clearly and concisely." </p>
 </p>
 
 <p>
@@ -146,7 +149,7 @@
 
 <p>
 <strong>Contextual prompts: </strong>
-<p>"Take this technical, jargon-heavy paragraph in the domain of artificial intelligence and rewrite it as a simple, engaging abstract for a manuscript submission. [paste your paragraph here]"</p>
+<p>"Take this technical, jargon-heavy text in the domain of artificial intelligence and rewrite it as a simple, engaging abstract for a manuscript submission. [paragraph 1], [paragraph 2]"</p>
 </p>
 
 <p>
@@ -170,6 +173,7 @@
     Ultimately, it is a personal choice and may depend on the specific use-case and the desired tone of the interaction.
     Experiment with both approaches to see which yields better results for your particular application.
 </li>
+<li><strong>CoT prompts: CoT prompts are not effective when used with newer "reasoning" models which natively deduce prompts step-by-step. Sometimes CoT prompts are a hinderence in that, they increase latency, cost, and token usage.</strong></li>
 </ul>
 </div>
 
