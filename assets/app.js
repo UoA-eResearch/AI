@@ -233,24 +233,45 @@ function initWorkshops(){
       summary: "Learn techniques for crafting effective prompts to improve AI model outputs and achieve consistent results across applications.",
       level: "Beginner",
       type: "Self-paced",
+      audience: ["Researchers", "Undergraduates", "Postgraduates"],
       tags: ["prompting", "best practices"],
       slug: "prompt-engineering"
+    },
+    {
+      name: "Responsible AI",
+      summary: "Understand the principles of responsible AI usage, including ethical considerations, bias mitigation, and regulatory compliance.",
+      level: "Beginner",
+      type: "Self-paced",
+      audience: ["Researchers", "Undergraduates", "Postgraduates", "Supervisors", "Professors"],
+      tags: ["AI considerations", "best practices"],
+      slug: "responsible-ai"
     }
   ];
 
   const grid = $("#workshopsGrid");
-  const q = $("#qWorkshops"), level = $("#levelWorkshops"), type = $("#typeWorkshops");
+  const q = $("#qWorkshops"), level = $("#levelWorkshops"), type = $("#typeWorkshops"), audience = $("#audienceWorkshops");
   const count = $("#workshopsCount");
+
+  if(audience){
+    uniq(workshops.flatMap(w => w.audience || []).filter(Boolean)).forEach(a => {
+      const opt = document.createElement("option");
+      opt.value = a;
+      opt.textContent = a;
+      audience.appendChild(opt);
+    });
+  }
 
   function render(){
     const qv = q.value.trim();
     const lv = level.value;
     const tv = type.value;
+    const av = audience ? audience.value : "";
 
     const filtered = workshops.filter(w =>
       matchesQuery(w, qv) &&
       (!lv || w.level === lv) &&
-      (!tv || w.type === tv)
+      (!tv || w.type === tv) &&
+      (!av || (w.audience || []).includes(av))
     );
 
     grid.innerHTML = "";
@@ -258,8 +279,8 @@ function initWorkshops(){
       grid.appendChild(createCard({
         name: w.name,
         summary: w.summary,
-        tags: [...(w.tags || []), w.level].filter(Boolean),
-        meta: `${w.level} · Workshop`,
+        tags: [...(w.tags || []), w.level, w.type, ...(w.audience || [])].filter(Boolean),
+        meta: `${w.level} · ${w.type} · Workshop`,
         detailsHref: `workshops/${w.slug}.html`
       }));
     });
@@ -267,7 +288,7 @@ function initWorkshops(){
     count.textContent = String(filtered.length);
   }
 
-  [q, level, type].forEach(el => el && el.addEventListener("input", render));
+  [q, level, type, audience].forEach(el => el && el.addEventListener("input", render));
   render();
 }
 
