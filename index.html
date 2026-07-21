@@ -1,69 +1,193 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Hub</title>
-  <meta name="description" content="AI Hub: curated AI tools and use-cases." />
-  <link rel="stylesheet" href="assets/styles.css" />
-  <script defer src="assets/app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nidhi Gowdra, Ph.D.</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Inline patch to ensure images contain instead of cover if CSS isn't updated immediately -->
+    <style>
+        .grid-image, .grid-image2 {
+            object-fit: contain !important;
+            height: auto !important;
+            max-height: 350px !important;
+        }
+    </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <span class="logo" aria-hidden="true">&diams;</span>
-      <a class="brand-link" href="index.html">AI Hub</a>
-    </div>
-    <nav class="nav" aria-label="Primary">
-      <a class="" href="tools.html">Tools</a>
-      <a class="" href="use-cases.html">Use‑cases</a>
-      <a class="" href="workshops.html">Workshops</a>
-      <a class="" href="about.html">About</a>
-      <button class="btn ghost" id="themeToggle" type="button" aria-label="Toggle theme">Theme</button>
+
+    <!-- Sticky Blur Navigation -->
+    <nav class="global-nav">
+        <div class="nav-content">
+            <a href="#" class="logo">Nidhi's Centre for eResearch (CeR) AI Portfolio.</a>
+            <ul class="nav-links">
+                <li><a href="#project-1">AI-Weather Forecasting</a></li>
+                <li><a href="#project-2">AI-Transcription</a></li>
+                <li><a href="#more-projects">More</a></li>
+                <li><a href="https://uoa-eresearch.github.io/ai/" target="_blank">AI Hub</a></li>
+            </ul>
+        </div>
     </nav>
-  </div>
-</header>
-<main id="main">
-  <section class="hero">
-    <div class="container">
-      <h1>AI Hub: curated AI tools and practical use‑cases</h1>
-      <p class="lead">Searchable tools, real‑world workflows, and governance guidance (data classification, hosting, PII risk, approval status) to support safer adoption.</p>
-      <div class="hero-actions">
-        <a class="btn" href="tools.html">Browse Tools</a>
-        <a class="btn" href="use-cases.html">Explore Use‑cases</a>
-        <a class="btn primary" href="workshops.html">Explore Workshops</a>
-        <a class="btn ghost" href="about.html#contribute">Contribute</a>
-      </div>
-      <div class="stats" aria-label="Site summary">
-        <div class="stat"><div class="stat-num" id="statTools">—</div><div class="stat-label">Tools</div></div>
-        <div class="stat"><div class="stat-num" id="statUsecases">—</div><div class="stat-label">Use‑cases</div></div>
-        <div class="stat"><div class="stat-num">Governance</div><div class="stat-label">First</div></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="container section">
-    <h2>Featured</h2>
-    <p class="muted">Highlights of tools and use‑cases. Click through for detail pages.</p>
-    <div class="grid" id="featuredGrid" aria-live="polite"></div>
-  </section>
+    <main>
+        <!-- Flagship Project 1 (Dark Theme) -->
+        <section id="project-1" class="hero theme-dark">
+            <div class="text-content">
+                <h2 class="headline">AI-Weather Forecasting</h2>
+                <h3 class="subhead">My most accurate AI weather forecasting platform built on Nvidia and Google DeepMind's expertise, precisely tuned for NZ</h3>
+                <h5 class="headline-xsmall">Km-Scale downscaling on open-data for upto 21 days forecast, all on a single GPU</h5>
+            </div>
+            <img src="assets/weather/weather-demo2.gif" alt="Weather Forecast Demo" class="project-image-weather">
+        </section>
 
-  <section class="container section callout">
-    <h2>Governance fields</h2>
-    <p>Standard data classification labels: <strong>Public</strong>, <strong>Internal</strong>, <strong>Sensitive</strong>, <strong>Restricted</strong>. Approval status is included on every tool.</p>
-    <a class="btn" href="about.html#governance">See governance model</a>
-  </section>
-</main>
+        <!-- Flagship Project 2 (Light Theme) -->
+        <section id="project-2" class="hero theme-light">
+            <div class="text-content">
+                <h2 class="headline">AI Transcription</h2>
+                <h3 class="subhead">Brilliantly simple sub-second latency, running locally</h3>
+            </div>
+            <div class="image-placeholder screenshot-2">
+                 <img src="assets/transcription/asr.png" alt="AI Transcription Demo" class="project-image">
+            </div>
+        </section>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> AI Hub</p>
-    <p class="muted"><a href="about.html#disclaimer">Disclaimer</a> · <a href="about.html#contact">Contact</a></p>
-  </div>
-</footer>
+        <!-- Secondary Projects Grid Row 1 -->
+        <section id="more-projects" class="project-grid">
+            <!-- Grid Item 1: Local Agentic AI -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Local RAG AI</h4>
+                    <p class="subhead-small">Small but mighty.</p>
+                </div>
+                <img src="assets/agentic_rag/cline.png" alt="Local RAG AI UI" class="grid-image">
+            </div>
+
+            <!-- Grid Item 2: Nvidia Dynamo Triton -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Nvidia Dynamo Triton</h4>
+                    <p class="subhead-small"> <br> High performance AI Inference with dynamic batching, concurrent execution, and optimized configurations.</p>
+                </div>
+                <img src="assets/triton/grafana.png" alt="Grafana Dashboard" class="grid-image2">
+            </div>
+        </section>
+
+        <!-- Secondary Projects Grid Row 2 -->
+        <section class="project-grid">
+            <!-- Archaeology -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Archaeology</h4>
+                    <p class="subhead-small">Computer vision for Face/Edge identification for archaeological lithics.</p>
+                </div>
+                <img src="assets/Archaeology/Arch_seg.png" alt="Archaeology Visual" class="grid-image">
+            </div>
+
+            <!-- Bones -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Pediatric Orthopedist</h4>
+                    <p class="subhead-small">Osteological mapping and identification for paediatrics.</p>
+                </div>
+                <img src="assets/bones/Figure1.png" alt="Bones Visual" class="grid-image">
+            </div>
+        </section>
+
+        <!-- Secondary Projects Grid Row 3 -->
+        <section class="project-grid">
+            <!-- Business School -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Business School</h4>
+                    <p class="subhead-small">Seasonal analytics and predictive modeling for businesses.</p>
+                </div>
+                <img src="assets/business-school/Picture_combined.png" alt="Business School Visual" class="grid-image">
+            </div>
+
+            <!-- Enterprise RAG -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Enterprise RAG</h4>
+                    <p class="subhead-small">Scaled Retrieval-Augmented Generation for corporate data.</p>
+                </div>
+                <img src="assets/enterprise_rag/rag.png" alt="Enterprise RAG Visual" class="grid-image">
+            </div>
+        </section>
+
+        <!-- Secondary Projects Grid Row 4 -->
+        <section class="project-grid">
+            <!-- Gait -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Gait</h4>
+                    <p class="subhead-small">Machine learning for biomechanical gait analysis.</p>
+                </div>
+                <img src="assets/Gait/gait.png" alt="Gait Visual" class="grid-image">
+            </div>
+
+            <!-- IVF-AI -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">IVF-AI</h4>
+                    <p class="subhead-small">Improving fertility outcomes using Deep learning and machine learning.</p>
+                </div>
+                <img src="assets/IVF-AI/IVF-AI.png" alt="IVF-AI Visual" class="grid-image">
+            </div>
+        </section>
+
+        <!-- Secondary Projects Grid Row 5 -->
+        <section class="project-grid">
+            <!-- Melanoma -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Melanoma</h4>
+                    <p class="subhead-small">Early detection models for skin cancer and Lymphoma.</p>
+                </div>
+                <img src="assets/melanoma/Heatmap.PNG" alt="Melanoma Visual" class="grid-image">
+            </div>
+
+            <!-- Coastal Erosion -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Coastal Erosion</h4>
+                    <p class="subhead-small">Satellite imagery analysis for edge of flora mapping.</p>
+                </div>
+                <img src="assets/Vegetation/Site4.png" alt="Vegetation Visual" class="grid-image">
+            </div>
+        </section>
+
+        <!-- Secondary Projects Grid Row 6 -->
+        <section class="project-grid">
+            <!-- MRAG -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">MRAG</h4>
+                    <p class="subhead-small">Scalable Multi-modal Retrieval-Augmented Generation for sovereign AI</p>
+                </div>
+                <img src="assets/mrag/multi_modal_rag.png" alt="MRAG Visual" class="grid-image">
+            </div>
+
+            <!-- Tide -->
+            <div class="grid-item theme-light-gray">
+                <div class="text-content">
+                    <h4 class="headline-small">Tide</h4>
+                    <p class="subhead-small">Oceanographic data processing and tide prediction.</p>
+                </div>
+                <img src="assets/Tide/Tide_Map.png" alt="Tide Visual" class="grid-image">
+            </div>
+        </section>
+
+        <!-- AI Hub Integration Section -->
+        <section id="ai-hub" class="hero theme-light-gray" style="height: 40vh; min-height: 400px; padding-top: 100px; border-bottom: none;">
+            <div class="text-content">
+                <h2 class="headline">AI Hub</h2>
+                <h3 class="subhead">Curated AI tools, real-world workflows, and governance guidance.</h3>
+                <div class="cta-group" style="margin-top: 30px;">
+                    <a href="https://uoa-eresearch.github.io/ai/" target="_blank" class="btn btn-primary">Explore the AI Hub</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
